@@ -6,26 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redireccionando...</title>
     <script>
-        // Función para detectar el sistema operativo
         function detectarSistemaOperativo() {
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-            alert("User-Agent: " + userAgent); // Agregar esta línea para depuración            
+            console.log("User-Agent: " + userAgent); // Registro para depuración
 
             if (/android/i.test(userAgent)) {
-                // Redirigir a la tienda de Google Play
                 window.location.href = "https://play.google.com/store/apps/details?id=com.ottoly.freetv";
-            }
-
-            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                // Redirigir a la tienda de App Store
+            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
                 window.location.href = "https://apps.apple.com/us/app/freetv/id1497757947";
+            } else {
+                window.location.href = "https://www.freetv.com";
             }
-
-            // Redirigir a una URL genérica si no se detecta un sistema operativo móvil
-            window.location.href = "https://www.freetv.com";
         }
 
-        // Redirigir automáticamente al detectar el sistema operativo
         detectarSistemaOperativo();
     </script>
 </head>
@@ -33,3 +26,4 @@
     <p>Redireccionando...</p>
 </body>
 </html>
+
