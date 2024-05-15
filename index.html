@@ -9,6 +9,7 @@
         // Función para detectar el sistema operativo
         function detectarSistemaOperativo() {
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            alert("User-Agent: " + userAgent); // Agregar esta línea para depuración            
 
             if (/android/i.test(userAgent)) {
                 // Redirigir a la tienda de Google Play
@@ -21,7 +22,7 @@
             }
 
             // Redirigir a una URL genérica si no se detecta un sistema operativo móvil
-            window.location.href = "https://absalongiraldo.github.io/freetv/error";
+            window.location.href = "https://freetv.com";
         }
 
         // Redirigir automáticamente al detectar el sistema operativo
