@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redireccionando...</title>
+    <script>
+        // Función para detectar el sistema operativo
+        function detectarSistemaOperativo() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            if (/android/i.test(userAgent)) {
+                // Redirigir a la tienda de Google Play
+                window.location.href = "https://play.google.com/store/apps/details?id=com.ottoly.freetv";
+            }
+
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                // Redirigir a la tienda de App Store
+                window.location.href = "https://apps.apple.com/app/id/1497757947";
+            }
+
+            // Redirigir a una URL genérica si no se detecta un sistema operativo móvil
+            window.location.href = "https://www.freetv.com";
+        }
+
+        // Redirigir automáticamente al detectar el sistema operativo
+        detectarSistemaOperativo();
+    </script>
+</head>
+<body>
+    <p>Redireccionando...</p>
+</body>
+</html>
