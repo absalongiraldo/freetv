@@ -9,20 +9,13 @@
         function detectarSistemaOperativo() {
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
             console.log("User-Agent: " + userAgent); // Registro para depuración
-            document.getElementById("user-agent").innerText = "User-Agent: " + userAgent;
 
-            if (/huawei|honor/i.test(userAgent)) {
-                console.log("Redirigiendo a Huawei AppGallery");
-                window.location.href = "https://appgallery.huawei.com/#/app/C102549981"; // Reemplaza con el ID de tu app en Huawei AppGallery
-            } else if (/android/i.test(userAgent)) {
-                console.log("Redirigiendo a Google Play");
+            if (/android/i.test(userAgent)) {
                 window.location.href = "https://play.google.com/store/apps/details?id=com.ottoly.freetv";
             } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                console.log("Redirigiendo a App Store");
                 window.location.href = "https://apps.apple.com/us/app/freetv/id1497757947";
             } else {
-                console.log("Redirigiendo a página de error");
-                window.location.href = "https://tudominio.com/error";
+                window.location.href = "https://www.freetv.com";
             }
         }
 
@@ -31,10 +24,5 @@
 </head>
 <body>
     <p>Redireccionando...</p>
-    <p id="user-agent"></p>
 </body>
 </html>
-
-
-
-
