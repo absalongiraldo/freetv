@@ -10,7 +10,9 @@
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
             console.log("User-Agent: " + userAgent); // Registro para depuración
 
-            if (/android/i.test(userAgent)) {
+            if (/huawei|honor/i.test(userAgent)) {
+                window.location.href = "https://appgallery.huawei.com/#/app/C102549981"; // Reemplaza con el ID de tu app en Huawei AppGallery
+            } else if (/android/i.test(userAgent)) {
                 window.location.href = "https://play.google.com/store/apps/details?id=com.ottoly.freetv";
             } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
                 window.location.href = "https://apps.apple.com/us/app/freetv/id1497757947";
